@@ -33,7 +33,7 @@ kyomouseMenu = (function () {
         }
     }
 })();
-//取消右键
+//取消系统默认右键
 $('html').on('contextmenu', function () {
     return false;
 }).click(function () {
@@ -42,8 +42,14 @@ $('html').on('contextmenu', function () {
 //界面右击
 $('html').on('contextmenu', function (e) {
     var mousemenu = kyomouseMenu.sys();
-    l = ($(document).width() - e.clientX) < mousemenu.width() ? (e.clientX - mousemenu.width()) : e.clientX;
-    t = ($(document).height() - e.clientY) < mousemenu.height() ? (e.clientY - mousemenu.height()) : e.clientY;
+    //没有滚动条可行
+    // l = ($(document).width() - e.clientX) < mousemenu.width() ? (e.clientX - mousemenu.width()) : e.clientX;
+    // t = ($(document).height() - e.clientY) < mousemenu.height() ? (e.clientY - mousemenu.height()) : e.clientY;
+
+    //当滑动滚动条时也能准确获取菜单位置
+    var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+    var l=e.clientX+"px";
+    var t=e.clientY+scrollTop+"px";
     mousemenu.css({left: l, top: t}).show();
     return false;
 });
