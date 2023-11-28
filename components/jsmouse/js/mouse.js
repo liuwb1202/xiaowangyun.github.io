@@ -8,8 +8,8 @@ kyomouseMenu = (function () {
             $('.mouse_menu').remove();
             // 定义菜单事件
             var munehtml='<div class="mouse_menu app-menu"><ul>' +
-                '<li><a menu="menu1" target="_blank">小望云</a></li>' +
-                '<li><a menu="menu2" target="_blank">北屋博客</a></li>' +
+                '<li><a menu="menu1" target="_blank">HomeLab</a></li>' +
+                '<li><a menu="menu2" target="_blank">我的个人小站博客</a></li>' +
                 '<li><a menu="menu3" target="_blank">望云小游戏</a></li>' +
                 '<li><a menu="menu4" target="_blank">雁过留声</a></li>' +
                 '</ul></div>';
@@ -18,16 +18,16 @@ kyomouseMenu = (function () {
                 .end().appendTo('body');
             //绑定事件
             $('.app-menu a[menu="menu1"]').on('click', function () {
-                window.location.href="http://www.xiaowangyun.com";
+                window.location.href="https://www.homelab.plus";
             });
             $('.app-menu a[menu="menu2"]').on('click', function () {
-                window.location.href ="http://www.xiaowangyun.com/wyblog";
+                window.location.href ="https://www.homelab.plus/wyblog";
             });
             $('.app-menu a[menu="menu3"]').on('click', function () {
-                window.location.href="http://h5.xiaowangyun.com/games";
+                window.location.href="https://www.homelab.plus/games";
             });
             $('.app-menu a[menu="menu4"]').on('click', function () {
-                window.location.href="http://www.xiaowangyun.com/wyleavemsg";
+                window.location.href="https://www.homelab.plus/wyleavemsg";
             });
             return mouseMenuApp;
         }
